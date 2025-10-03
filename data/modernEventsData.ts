@@ -1,0 +1,52 @@
+
+
+
+
+// Fixed import path to use .js extension for ES module compatibility.
+import { ModernEvent } from '../types.js';
+
+export const modernEventsData: ModernEvent[] = [
+  { year: 1789, description: "French Revolution begins", fullText: "1789, French Revolution: g89 12/22 26-28" },
+  { year: 1804, description: "British and Foreign Bible Society formed", fullText: "1804, British and Foreign Bible Society formed: w97 10/15 9" },
+  { year: 1815, description: "Napoléon defeated at Waterloo, Belgium", fullText: "1815, Napoléon defeated at Waterloo, Belgium: g 6/11 25; g99 3/22 16" },
+  { year: 1818, description: "Robert Morrison completes Chinese Bible", fullText: "1818/1819, Robert Morrison completes Chinese Bible: w09 6/1 10-11" },
+  { year: 1835, description: "Adoniram Judson completes Burmese Bible", fullText: "1835, Adoniram Judson completes Burmese Bible: w09 6/1 11" },
+  { year: 1844, description: "Millerites expect Jesus’ return (October 22)", fullText: "1844, Millerites expect Jesus’ return (October 22): w97 7/15 25" },
+  { year: 1852, description: "C. T. Russell born", fullText: "1852, C. T. Russell born: jv 42" },
+  { year: 1861, description: "U.S. Civil War begins", fullText: "1861-1865, U.S. Civil War: g86 4/8 5" },
+  { year: 1868, description: "Russell begins careful study of Scriptures", fullText: "c. 1868, Russell begins careful study of Scriptures: kr 28; w06 1/15 24" },
+  { year: 1870, description: "Russell forms Bible study group", fullText: "1870, Russell forms Bible study group: kr 28; w06 8/15 13; w94 5/1 24; jv 44, 236" },
+  { year: 1870, description: "Key doctrines (soul, ransom, Christ's return) clarified", fullText: "1870-1875, soul, ransom, manner of Christ’s return clarified: kr 28" },
+  { year: 1876, description: "End of appointed times in 1914 first announced", fullText: "1876, end of appointed times of nations in 1914 first announced: w15 6/15 22; kr 28; br78 7" },
+  { year: 1877, description: "Barbour and Russell publish 'Three Worlds'", fullText: "1877, Barbour and Russell publish Three Worlds, and the Harvest of This World: jv 47, 575" },
+  { year: 1877, description: "Russell publishes 'The Object and Manner of Our Lord’s Return'", fullText: "Russell publishes The Object and Manner of Our Lord’s Return: kr 28; jv 47, 132-133, 575" },
+  { year: 1879, description: "Russell withdraws from 'Herald of the Morning'", fullText: "1879, May 3, Russell withdraws from Herald of the Morning: jv 47-48, 131" },
+  { year: 1879, description: "Zion’s Watch Tower first published (July)", fullText: "July, Zion’s Watch Tower first published: kr 28, 44; w12 8/15 7; jv 47-48; br78 6; w87 3/1 11-12; je 8" },
+  { year: 1879, description: "Babylon the Great associated with Christendom", fullText: "Babylon the Great seen to be associated with Christendom: w16.11 26-27; kr 28" },
+  { year: 1880, description: "Russell tours northeastern U.S. to form study groups", fullText: "1880, Russell tours northeastern U.S. to form study groups: kr 28, 172; w94 5/1 14" },
+  { year: 1881, description: "First tracts published", fullText: "1881, first tracts published: kr 28; jv 718" },
+  { year: 1881, description: "Zion’s Watch Tower Tract Society formed (February)", fullText: "February 16, Zion’s Watch Tower Tract Society formed: jv 210, 229, 576; br78 6" },
+  { year: 1881, description: "Call for 1,000 preachers; colporteur work begins (April)", fullText: "April, call for 1,000 preachers: kr 28; w12 8/15 5; jv 210" },
+  { year: 1884, description: "Zion’s Watch Tower Tract Society incorporated (December)", fullText: "1884, December 15, Zion’s Watch Tower Tract Society incorporated: w09 5/1 25; jv 210, 229, 576; br78 6; je 8-9" },
+  { year: 1886, description: "'The Divine Plan of the Ages' released", fullText: "The Divine Plan of the Ages (Millennial Dawn, Volume I) released: kr 28; jv 52, 576" },
+  { year: 1889, description: "Bible House in Allegheny, PA, completed", fullText: "1889, Bible House in Allegheny, Pennsylvania, completed: kr 28; jv 54" },
+  { year: 1891, description: "First convention held; Russell travels abroad", fullText: "1891, first gathering of Bible Students to be termed a convention (Allegheny, Pennsylvania): jv 254" },
+  { year: 1894, description: "Speakers (pilgrims) sent to congregations", fullText: "1894, speakers sent to congregations: jv 204, 222" },
+  { year: 1895, description: "Elder arrangement instituted", fullText: "1895, elder arrangement instituted: kr 118-119, 123, 129" },
+  { year: 1900, description: "First branch office established (London, England)", fullText: "1900, first branch office established (London, England): kr 29, 204; yb00 71-72; g00 12/22 17; jv 210" },
+  { year: 1903, description: "Russell's lectures appear regularly in newspapers", fullText: "1903, Russell’s lectures (sermons) appear regularly in newspapers: kr 29, 68-69, 76; jv 58" },
+  { year: 1909, description: "Watch Tower Society moves headquarters to Brooklyn (January)", fullText: "1909, January 31, Watch Tower Society moves headquarters to Brooklyn: kr 29, 69; w09 5/1 22-24; w09 8/15 23; jv 59; br78 6; je 9" },
+  { year: 1912, description: "Work begins on 'Photo-Drama of Creation'", fullText: "1912, work begins on “Photo-Drama of Creation”: jv 59-60; br78 6" },
+  { year: 1914, description: "'Photo-Drama of Creation' first shown (January)", fullText: "1914, January 11, “Photo-Drama of Creation” first shown: w14 2/15 31; kr 29, 76; yb14 172; jv 60, 422; br78 6; g88 2/8 11" },
+  { year: 1914, description: "Archduke of Austria-Hungary assassinated; WWI begins (June)", fullText: "June 28, Archduke of Austria-Hungary assassinated: yb14 171; g 8/09 19-21; g94 11/8 3" },
+  { year: 1914, description: "Russell announces end of Gentile times (October)", fullText: "October, Russell announces end of Gentile times: kr 29" },
+  { year: 1916, description: "C. T. Russell dies (October 31)", fullText: "October 31, Russell dies (age 64): yb16 175; jv 63-64; sh 354" },
+  { year: 1917, description: "J. F. Rutherford elected president of Watch Tower Society (January)", fullText: "1917, January 6, Rutherford elected president of Watch Tower Society: jv 65; sh 354-355" },
+  { year: 1917, description: "'The Finished Mystery' released (July)", fullText: "July 17, book The Finished Mystery released: yb17 176; re 8; jv 66-67" },
+  { year: 1918, description: "Rutherford and associates imprisoned (July)", fullText: "July 4, Rutherford and associates imprisoned in Atlanta, Georgia: jv 653" },
+  { year: 1918, description: "World War I ends (November 11)", fullText: "November 11, World War I ends: w09 7/15 24; g05 12/22 4" },
+  { year: 1919, description: "Rutherford and associates freed from prison on bail (March)", fullText: "March 26, Rutherford and associates freed from prison on bail: kr 24; w08 9/15 8; jv 75, 425, 654; w91 1/1 11-12" },
+  { year: 1919, description: "First Cedar Point, Ohio, convention (September)", fullText: "September 1-8, first Cedar Point, Ohio, convention: w19.10 4-5; w16.05 28-29; kr 24; w12 9/15 29; re 169-170, 243; jv 76-77; w91 1/1 12" },
+  { year: 1919, description: "'The Golden Age' magazine announced (September)", fullText: "September 5, Golden Age announced: w19.10 5; w16.05 29; kr 62; jv 77; w91 1/1 12" },
+  { year: 1919, description: "Service directors appointed in congregations (October)", fullText: "October, service directors appointed: w16.05 29; w14 1/15 14; kr 63, 123; w06 2/15 26-27; w02 7/1 16; ip-2 317; jv 212, 637; w87 6/15 17" },
+];
