@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect, useCallback, useMemo, createElement } from 'react';
 import htm from 'htm';
 import { Header } from './components/Header.js';
@@ -21,6 +22,8 @@ import { ProcreationTable } from './components/ProcreationTable.js';
 import { QASection } from './components/QASection.js';
 import { BibleBooksTable } from './components/BibleBooksTable.js';
 import { ChronologyMethodology } from './components/ChronologyMethodology.js';
+import { QRCodeFooter } from './components/QRCodeFooter.js';
+import { ApiKeyManager } from './components/ApiKeyManager.js';
 
 import { rawChronologyData } from './data/chronology.js';
 import { modernEventsData } from './data/modernEventsData.js';
@@ -329,6 +332,7 @@ const App = () => {
                     />
                 </div>
                 <div className="space-y-8">
+                    <${ApiKeyManager} />
                     <${BibleBooksTable} />
                     <${LifeSpanTable} />
                     <${ProcreationTable} />
@@ -342,9 +346,7 @@ const App = () => {
           `}
         </div>
       </main>
-      <footer className="text-center py-6 text-slate-500 text-sm">
-        <p>Enhanced by a world-class senior frontend engineer.</p>
-      </footer>
+      <${QRCodeFooter} />
     </div>
   `
   );

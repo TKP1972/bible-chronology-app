@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'biblical-chronology-v4'; // <-- Incremented cache version
+const CACHE_NAME = 'biblical-chronology-v7'; // <-- Incremented cache version
 const urlsToCache = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const urlsToCache = [
   './icon.svg',
   './components/AnalysisSection.js',
   './components/ApostolicPeriodChart.js',
+  './components/ApiKeyManager.js',
   './components/BeliefsClarifiedTimelineChart.js',
   './components/BibleBooksTable.js',
   './components/ChatMessage.js',
@@ -34,6 +35,7 @@ const urlsToCache = [
   './components/Tabs.js',
   './components/Timeline.js',
   './components/TimelineItem.js',
+  './components/QRCodeFooter.js',
   './data/apostolicEventsData.js',
   './data/beliefsClarifiedData.js',
   './data/bibleBooksData.js',
@@ -60,10 +62,11 @@ const urlsToCache = [
   './utils/parser.js',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap',
-  'https://aistudiocdn.com/react@^19.1.1',
-  'https://aistudiocdn.com/react-dom@^19.1.1/client',
-  'https://aistudiocdn.com/htm@^3.1.1',
-  'https://aistudiocdn.com/@google/genai@^1.20.0'
+  'https://aistudiocdn.com/react@19.1.1',
+  'https://aistudiocdn.com/react-dom@19.1.1/client',
+  'https://aistudiocdn.com/htm@3.1.1',
+  'https://aistudiocdn.com/@google/genai@1.20.0',
+  'https://esm.sh/qrcode@1.5.3'
 ];
 
 self.addEventListener('install', (event) => {
@@ -74,6 +77,7 @@ self.addEventListener('install', (event) => {
         console.log('Opened cache');
         const promises = urlsToCache.map(url => {
             return cache.add(url).catch(err => {
+                // For opaque resources (like no-cors CDN requests), we must fetch and put manually
                 if (url.startsWith('http')) {
                     const request = new Request(url, { mode: 'no-cors' });
                     return fetch(request).then(response => cache.put(request, response));

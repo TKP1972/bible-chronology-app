@@ -1,26 +1,32 @@
 
+
 import { GoogleGenAI } from "@google/genai";
 
 // Store the instances globally within the module
 let ai = null;
 let chat = null;
+let currentApiKey = null;
 
 /**
- * Lazily initializes and returns the GoogleGenAI instance.
- * Throws an error if the API key is not available. This allows the app
- * to load even if the key isn't set, and only error when an AI feature is used.
+ * Lazily initializes and returns the GoogleGenAI instance based on the key
+ * stored in localStorage. Throws an error if the API key is not available.
+ * This function also handles re-initialization if the API key changes.
  */
 const getAiInstance = () => {
-    if (ai) {
-        return ai;
+    const storedApiKey = localStorage.getItem('gemini_api_key');
+
+    if (!storedApiKey) {
+        throw new Error("Gemini API Key not set. Please add your key in the 'Reference & AI' tab to use AI features.");
     }
 
-    const API_KEY = globalThis.process?.env?.API_KEY;
-    if (!API_KEY) {
-        throw new Error("API_KEY environment variable not set. This is a required environment variable to use AI features.");
+    // If the key has changed or if there's no AI instance, create a new one.
+    if (storedApiKey !== currentApiKey || !ai) {
+        console.log("Initializing or re-initializing Gemini AI instance.");
+        currentApiKey = storedApiKey;
+        ai = new GoogleGenAI({ apiKey: currentApiKey });
+        chat = null; // IMPORTANT: Reset the chat session when the AI instance changes
     }
 
-    ai = new GoogleGenAI({ apiKey: API_KEY });
     return ai;
 };
 
@@ -105,11 +111,15 @@ export const generateQueryResponse = async (
     chronologyContext
 ) => {
 
-    if (!chat) {
-        initializeChat(chronologyContext);
-    }
-
     try {
+        // Always try to get the instance first to ensure the key is validated
+        // and the instance is up to date.
+        getAiInstance();
+        
+        if (!chat) {
+            initializeChat(chronologyContext);
+        }
+
         const response = await chat.sendMessage({ message: query });
         
         return response.text;
